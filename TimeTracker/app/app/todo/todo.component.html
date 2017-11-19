@@ -1,0 +1,10 @@
+<div *ngIf= "mode=='Display'">
+  {{todo.title}}
+</div>
+
+<div *ngIf= "mode=='Create'">
+ 
+    <textarea type="text" class="form form-control" [(ngModel)]="newTodo.title" row="5"></textarea>
+   <button class="btn btn-success"
+   (click)="createNewTodo()" >Create New Todo</button>
+</div>

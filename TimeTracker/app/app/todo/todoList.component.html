@@ -1,0 +1,53 @@
+<!-- <h1>{{title + "--Hello"}}</h1>
+<div class="alert alert-danger"*ngIf="!!errorMessage">
+    {{errorMessage}}
+</div>
+
+<div id="test" *ngIf="todo.isCompleted else elseBlock">
+<s>{{todo.title}}</s>
+</div>
+
+<ng-template #elseBlock>
+    <span>{{todo.title}}</span>
+</ng-template>
+
+<div>
+    <button (click)="toggleCompleted()" class="btn">Toggle Completed</button>
+</div>
+
+<div [hidden]=todo.isCompleted>
+    <img src={{todo.imageUrl}}>
+    <img [src]="todo.imageUrl"> 
+ <img [src]="todo.imageUrl" [style.width.px]="imageWidth">
+</div> 
+
+{{2+2}}
+{{getTitle()}}
+<div innerText={{title}}></div> -->
+
+
+
+
+
+<!-- <input type="text" class="form form-control" [(ngModel)]="newTodoTitle">
+ <span>{{newTodoTitle}}</span> 
+<button class="btn btn-success"(click)="createNewTodo()">Create New Todo</button>  -->
+
+<div class="col-sm-8">
+
+
+    <ul class="list-group">
+        <li class="list-group-item active">Active Todos
+
+        </li>
+        <li *ngFor="let t of todos" class="list-group-item">
+            <todo [mode]="'Display'" [todo]="t" (saveNewTodo)="addNewTodo($event)"></todo>
+            <!-- {{todo.title}} {{todo.endDate|date:'MM/dd/yyyy'}} -->
+        </li>
+    </ul>
+
+</div>
+
+<div class="col-sm-4">
+    <todo [mode]="'Create'" (saveNewTodo)="addNewTodo($event)"></todo>
+</div>
